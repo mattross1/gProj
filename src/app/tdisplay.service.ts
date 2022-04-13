@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class TdisplayService {
 
-  datau = 'https://www.cdc.gov/coronavirus/2019-ncov/map-data-cases.csv'
+  datau = ''
 
   constructor(private http: HttpClient) { }
 
