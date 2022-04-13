@@ -1,0 +1,10 @@
+<div class="searchCenter">
+    <h1 style="font-size:250%">Ice Cream</h1>
+    <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Phone #</mat-label>
+          <input #searchField (keydown)="onKeydown($event)" matInput style="font-size:250%" name="searchHTML">
+        </mat-form-field>
+    </form>
+</div>
+<router-outlet></router-outlet>
