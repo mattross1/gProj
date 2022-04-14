@@ -6,7 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class TdisplayService {
 
-  datau = 'https://data.cdc.gov/api/views/9mfq-cb36/rows.csv'
+  datau = 'http://geck.ooo/customers.csv'
 
   constructor(private http: HttpClient) { }
 
