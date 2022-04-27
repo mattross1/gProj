@@ -11,10 +11,12 @@ export class RemoveComponent implements OnInit {
   @ViewChild('phoneRemField')
   phoneRemField!: ElementRef;
 
-  constructor(private dispService: TdisplayService) { }
+  constructor(private dispService: TdisplayService) {
+    this.dispService.getIP();
+  }
 
   ngOnInit(): void {
-    this.dispService.getIP();
+    
   }
 
   removeSubmitFunction() {

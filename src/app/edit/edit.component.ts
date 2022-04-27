@@ -13,10 +13,12 @@ export class EditComponent implements OnInit {
   @ViewChild('punchUpField')
   punchUpField!: ElementRef;
 
-  constructor(private dispService: TdisplayService) { }
+  constructor(private dispService: TdisplayService) {
+    this.dispService.getIP();
+   }
 
   ngOnInit(): void {
-    this.dispService.getIP();
+    
   }
 
   updateSubmitFunction() {

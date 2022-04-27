@@ -13,12 +13,12 @@ export class ResultsComponent implements OnInit {
   searchPass: string | undefined;
 
   constructor(private dispService: TdisplayService, private actr: ActivatedRoute) {
+    this.dispService.getIP();
     this.actr.queryParams.subscribe((para) => {
       this.searchPass = this.actr.snapshot.params['searchPass'];
     })
    }
   ngOnInit(): void {
-    this.dispService.getIP();
     this.resRetrieve();
   }
 
