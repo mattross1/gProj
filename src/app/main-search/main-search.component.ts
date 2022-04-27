@@ -10,23 +10,21 @@ import { TdisplayService } from '../tdisplay.service';
 })
 export class MainSearchComponent implements OnInit {
   
-  mainIP: any;
 
   @ViewChild('searchField')
   searchField!: ElementRef;
   
-  constructor(private router: Router, private dispService: TdisplayService) {
+  constructor(private router: Router) {
    }
 
 
   ngOnInit(): void {
-    this.mainIP = this.dispService.getIP();
   }
 
   onKeydown(event: KeyboardEvent) {
     const inHTML = this.searchField.nativeElement.value;
     if (event.key == "Enter") {
-      this.router.navigate(['/results', {searchPass: inHTML, ipo: this.mainIP}]);
+      this.router.navigate(['/results', {searchPass: inHTML}]);
     }
   }
 
