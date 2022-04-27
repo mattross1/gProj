@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { TdisplayService } from '../tdisplay.service';
 
 
 @Component({
@@ -8,10 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-search.component.css']
 })
 export class MainSearchComponent implements OnInit {
+  
+  mainIP: any;
+
   @ViewChild('searchField')
   searchField!: ElementRef;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dispService: TdisplayService) {
+    this.mainIP = this.dispService.getIP();
+   }
 
 
   ngOnInit(): void {
@@ -20,7 +26,7 @@ export class MainSearchComponent implements OnInit {
   onKeydown(event: KeyboardEvent) {
     const inHTML = this.searchField.nativeElement.value;
     if (event.key == "Enter") {
-      this.router.navigate(['/results', {searchPass: inHTML}]);
+      this.router.navigate(['/results', {searchPass: inHTML, ipo: this.mainIP}]);
     }
   }
 

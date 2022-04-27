@@ -17,10 +17,11 @@ export class TdisplayService {
   {
     await new Promise<any>(prom => this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip}));
+      return this.clientIp
   }
 
-  search(params: string | undefined) {
-    this.getIP();
+  search(params: string | undefined, ipIN: string) {
+    this.clientIp = ipIN;
     let searchString: string = '';
     console.log("IP WAS: ", this.clientIp);
     if (this.clientIp != '98.171.200.74')
@@ -54,7 +55,6 @@ export class TdisplayService {
   }
 
   updateFun(phoneUpIn: string | undefined, punchUpIn: string | undefined) {
-    this.getIP();
     let updateString: string = 'update iceTable set punches = ' + 
     punchUpIn + ' where phone = \'' + phoneUpIn + '\';';
     let getPara:Object = {
@@ -70,7 +70,6 @@ export class TdisplayService {
     
   }
   removeFun(phoneRemIn: string | undefined) {
-    this.getIP();
     let removeString: string = 'delete from iceTable where phone = \'' + phoneRemIn + '\';';
     let getPara:Object = {
       headers: new HttpHeaders({
