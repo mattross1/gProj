@@ -7,7 +7,7 @@ import { ConstantPool } from '@angular/compiler';
 })
 export class TdisplayService {
 
-  datau = 'http://localhost:3000/';
+  datau = 'http://ec2-3-87-116-129.compute-1.amazonaws.com:3000/';
   clientIp = '';
 
   constructor(private http: HttpClient) { }
