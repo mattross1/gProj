@@ -22,6 +22,7 @@ export class TdisplayService {
   search(params: string | undefined) {
     this.getIP();
     let searchString: string = '';
+    console.log("IP WAS: ", this.clientIp);
     if (this.clientIp != '98.171.200.74')
     {
       searchString  = 'SELECT * FROM iceTable WHERE phone LIKE \'%' + params + '%\'';
