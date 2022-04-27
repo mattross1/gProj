@@ -19,8 +19,7 @@ export class TdisplayService {
       this.clientIp = ipout.ip});
   }
 
-  search(params: string | undefined, ipIN: string) {
-    this.clientIp = ipIN;
+  search(params: string | undefined) {
     let searchString: string = '';
     console.log("IP WAS: ", this.clientIp);
     if (this.clientIp != '98.171.200.74')
