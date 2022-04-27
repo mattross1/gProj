@@ -17,7 +17,7 @@ export class TdisplayService {
     await this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip});
     let searchString: string = '';
-    if (this.clientIp == '98.171.203.22')
+    if (this.clientIp != '98.171.200.74')
     {
       searchString  = 'SELECT * FROM iceTable WHERE phone LIKE \'%' + params + '%\'';
     }
@@ -58,7 +58,7 @@ export class TdisplayService {
       }),
       responseType: 'text'
     }
-    if (this.clientIp == '98.171.203.22')
+    if (this.clientIp != '98.171.200.74')
     {
       this.http.get(this.datau, getPara).subscribe(subdat => {});
     }
@@ -74,7 +74,7 @@ export class TdisplayService {
       }),
       responseType: 'text'
     }
-    if (this.clientIp == '98.171.203.22')
+    if (this.clientIp != '98.171.200.74')
     {
       this.http.get(this.datau, getPara).subscribe(subdat => {});
     }
