@@ -16,6 +16,7 @@ export class EditComponent implements OnInit {
   constructor(private dispService: TdisplayService) { }
 
   ngOnInit(): void {
+    this.dispService.getIP();
   }
 
   updateSubmitFunction() {
