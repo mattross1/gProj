@@ -16,11 +16,11 @@ export class MainSearchComponent implements OnInit {
   searchField!: ElementRef;
   
   constructor(private router: Router, private dispService: TdisplayService) {
-    this.mainIP = this.dispService.getIP();
    }
 
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.mainIP = await this.dispService.getIP();
   }
 
   onKeydown(event: KeyboardEvent) {
