@@ -11,12 +11,18 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultsComponent } from './results/results.component';
+import { SignupComponent } from './signup/signup.component';
+import { EditComponent } from './edit/edit.component';
+import { RemoveComponent } from './remove/remove.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainSearchComponent,
-    ResultsComponent
+    ResultsComponent,
+    SignupComponent,
+    EditComponent,
+    RemoveComponent
   ],
   imports: [
     BrowserModule,

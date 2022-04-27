@@ -10,10 +10,11 @@ import { TdisplayService } from '../tdisplay.service';
 export class ResultsComponent implements OnInit {
 
   dataArr:any[] = [];
+  searchPass: string | undefined;
 
   constructor(private dispService: TdisplayService, private actr: ActivatedRoute) {
     this.actr.queryParams.subscribe((para) => {
-      console.log('HERE AT THE RESULTS', this.actr.snapshot.params['searchPass']);
+      this.searchPass = this.actr.snapshot.params['searchPass'];
     })
    }
   ngOnInit(): void {
@@ -21,8 +22,8 @@ export class ResultsComponent implements OnInit {
   }
 
   resRetrieve() {
-    this.dispService.retrieve().subscribe(subdat => {const lst=subdat.split('\n');
-  lst.forEach(i => {this.dataArr.push(i)})})
+    this.dispService.search(this.searchPass).subscribe(subdat => {const lst=subdat.split('\n');
+    lst.forEach(i => {this.dataArr.push(i)})})
   }
 
 }
