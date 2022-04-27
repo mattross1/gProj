@@ -16,6 +16,7 @@ import { ResultsComponent } from './results/results.component';
 import { SignupComponent } from './signup/signup.component';
 import { EditComponent } from './edit/edit.component';
 import { RemoveComponent } from './remove/remove.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RemoveComponent } from './remove/remove.component';
     BrowserAnimationsModule,
     MatInputModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    ToastrModule
   ],
   providers: [],
   bootstrap: [AppComponent]

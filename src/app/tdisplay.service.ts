@@ -27,7 +27,7 @@ export class TdisplayService {
       searchString  = 'SELECT * FROM iceTable WHERE phone LIKE \'%' + params + '%\'';
     }
     else {
-      searchString  = 'SELECT first FROM iceTable WHERE phone LIKE \'%' + params + '%\'';
+      searchString  = 'SELECT * FROM iceTable WHERE phone =\'' + params + '\'';
     }
     let getPara:Object = {
       headers: new HttpHeaders({
