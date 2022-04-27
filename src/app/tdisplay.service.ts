@@ -77,7 +77,6 @@ export class TdisplayService {
     {
       this.http.get(this.datau, getPara).subscribe(subdat => {});
     }
-    
   }
 
 }

@@ -9,7 +9,7 @@ import { TdisplayService } from '../tdisplay.service';
 })
 export class ResultsComponent implements OnInit {
 
-  dataArr:any[] = [];
+  dataArr: String= '';
   searchPass: string | undefined;
 
   constructor(private dispService: TdisplayService, private actr: ActivatedRoute) {
@@ -22,8 +22,9 @@ export class ResultsComponent implements OnInit {
   }
 
   resRetrieve() {
-    this.dispService.search(this.searchPass).subscribe(subdat => {const lst=subdat.split('\n');
-    lst.forEach(i => {this.dataArr.push(i)})})
+    this.dispService.search(this.searchPass).subscribe(subdat => {
+      console.log(subdat)
+    });
   }
 
 }
