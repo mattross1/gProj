@@ -21,6 +21,7 @@ export class ResultsComponent implements OnInit {
     })
    }
   ngOnInit(): void {
+    this.dispService.getIP();
     this.resRetrieve();
   }
 
