@@ -15,9 +15,9 @@ export class TdisplayService {
 
   async getIP()
   {
-    await new Promise<any>(prom => this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
-      this.clientIp = ipout.ip}));
-      return <string> this.clientIp
+    const ipWait = await this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
+      this.clientIp = ipout.ip});
+      return this.clientIp
   }
 
   search(params: string | undefined, ipIN: string) {
