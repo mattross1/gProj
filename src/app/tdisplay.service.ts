@@ -13,9 +13,14 @@ export class TdisplayService {
 
   constructor(private http: HttpClient) { }
 
-  async search(params: string | undefined) {
-    await this.http.get<string>("https://cors-anywhere.herokuapp.com/http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
+  async getIP()
+  {
+    await this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip});
+  }
+
+  search(params: string | undefined) {
+    this.getIP();
     let searchString: string = '';
     if (this.clientIp != '98.171.200.74')
     {
@@ -48,8 +53,7 @@ export class TdisplayService {
   }
 
   updateFun(phoneUpIn: string | undefined, punchUpIn: string | undefined) {
-    this.http.get<string>("https://cors-anywhere.herokuapp.com/http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
-      this.clientIp = ipout.ip});
+    this.getIP();
     let updateString: string = 'update iceTable set punches = ' + 
     punchUpIn + ' where phone = \'' + phoneUpIn + '\';';
     let getPara:Object = {
@@ -65,8 +69,7 @@ export class TdisplayService {
     
   }
   removeFun(phoneRemIn: string | undefined) {
-    this.http.get<string>("https://cors-anywhere.herokuapp.com/http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
-      this.clientIp = ipout.ip});
+    this.getIP();
     let removeString: string = 'delete from iceTable where phone = \'' + phoneRemIn + '\';';
     let getPara:Object = {
       headers: new HttpHeaders({
