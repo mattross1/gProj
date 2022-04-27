@@ -14,7 +14,7 @@ export class TdisplayService {
   constructor(private http: HttpClient) { }
 
   async search(params: string | undefined) {
-    await this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
+    await this.http.get<string>("https://cors-proxy.htmldriven.com/?url=http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip});
     let searchString: string = '';
     if (this.clientIp != '98.171.200.74')
@@ -48,7 +48,7 @@ export class TdisplayService {
   }
 
   updateFun(phoneUpIn: string | undefined, punchUpIn: string | undefined) {
-    this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
+    this.http.get<string>("https://cors-proxy.htmldriven.com/?url=http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip});
     let updateString: string = 'update iceTable set punches = ' + 
     punchUpIn + ' where phone = \'' + phoneUpIn + '\';';
@@ -65,7 +65,7 @@ export class TdisplayService {
     
   }
   removeFun(phoneRemIn: string | undefined) {
-    this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
+    this.http.get<string>("https://cors-proxy.htmldriven.com/?url=http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip});
     let removeString: string = 'delete from iceTable where phone = \'' + phoneRemIn + '\';';
     let getPara:Object = {
