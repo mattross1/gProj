@@ -17,7 +17,7 @@ export class TdisplayService {
   {
     await new Promise<any>(prom => this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip}));
-      return this.clientIp
+      return <string> this.clientIp
   }
 
   search(params: string | undefined, ipIN: string) {
