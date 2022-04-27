@@ -21,8 +21,8 @@ export class ResultsComponent implements OnInit {
     this.resRetrieve();
   }
 
-  resRetrieve() {
-    this.dispService.search(this.searchPass).subscribe(subdat => {
+  async resRetrieve() {
+    (await this.dispService.search(this.searchPass)).subscribe(subdat => {
       console.log(subdat)
     });
   }

@@ -8,12 +8,13 @@ import { ConstantPool } from '@angular/compiler';
 export class TdisplayService {
 
   datau = 'http://ec2-3-87-116-129.compute-1.amazonaws.com:3000/';
+  //datau = 'http://localhost:3000/';
   clientIp = '';
 
   constructor(private http: HttpClient) { }
 
-  search(params: string | undefined) {
-    this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
+  async search(params: string | undefined) {
+    await this.http.get<string>("http://api.ipify.org/?format=json").subscribe((ipout:any)=>{
       this.clientIp = ipout.ip});
     let searchString: string = '';
     if (this.clientIp == '98.171.203.22')
