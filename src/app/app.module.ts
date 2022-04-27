@@ -7,6 +7,8 @@ import { MainSearchComponent } from './main-search/main-search.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,7 +32,8 @@ import { RemoveComponent } from './remove/remove.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

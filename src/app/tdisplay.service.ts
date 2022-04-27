@@ -35,7 +35,7 @@ export class TdisplayService {
       }),
       responseType: 'text'
     }
-    return this.http.get<String>(this.datau, getPara)
+    return this.http.get<any>(this.datau, getPara)
   }
 
   signupFun(firstIn: string | undefined, lastIn: string | undefined, emailIn: string | undefined, phoneIn: string | undefined) {
