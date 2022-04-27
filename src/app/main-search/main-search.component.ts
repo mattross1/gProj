@@ -19,8 +19,8 @@ export class MainSearchComponent implements OnInit {
    }
 
 
-  async ngOnInit(): Promise<void> {
-    this.mainIP = await this.dispService.getIP();
+  ngOnInit(): void {
+    this.mainIP = this.dispService.getIP();
   }
 
   onKeydown(event: KeyboardEvent) {
