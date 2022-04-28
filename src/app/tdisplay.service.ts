@@ -89,7 +89,7 @@ export class TdisplayService {
       return this.http.get<any>(this.datau, getPara)
     }
 
-    throw throwError(Unauthorized)
+    throw throwError(new Error)
 
     
   }

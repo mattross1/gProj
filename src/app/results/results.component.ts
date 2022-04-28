@@ -30,8 +30,10 @@ export class ResultsComponent implements OnInit {
       
       lst.forEach((i: any) => { this.dataArr.push(JSON.parse(i)); });
       this.dataArr = this.dataArr[0];
+      console.log('length.search ', this.dataArr.length)
     });
-    console.log(this.dataArr)
+    console.log('success.search')
+    
   }
 
 }
