@@ -1,6 +1,7 @@
 {
   "name": "iceteam",
   "version": "0.0.0",
+  "sideEffects": "true",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
