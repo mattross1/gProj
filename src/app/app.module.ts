@@ -8,6 +8,7 @@ import { MainSearchComponent } from './main-search/main-search.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EditComponent } from './edit/edit.component';
 import { RemoveComponent } from './remove/remove.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SupportComponent } from './support/support.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
     ResultsComponent,
     SignupComponent,
     EditComponent,
-    RemoveComponent
+    RemoveComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       timeOut: 3000
-    })
+    }),
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
