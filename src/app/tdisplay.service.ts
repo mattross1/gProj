@@ -4,6 +4,7 @@ import { ConstantPool } from '@angular/compiler';
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { Unauthorized } from 'http-errors'
+import { MessageService } from './message.service';
 
 
 
@@ -16,7 +17,7 @@ export class TdisplayService {
   //datau = 'http://localhost:3000/';
   clientIp = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private msgService: MessageService) { }
 
   async getIP()
   {
@@ -71,6 +72,8 @@ export class TdisplayService {
       return this.http.get<any>(this.datau, getPara)
     }
 
+    this.msgService.errorFun("Edit Error", "Error");
+    console.log('fail.edit')
     throw throwError(Unauthorized)
 
     
@@ -88,7 +91,9 @@ export class TdisplayService {
     {
       return this.http.get<any>(this.datau, getPara)
     }
-
+    
+    this.msgService.errorFun("Remove Error", "Error");
+    console.log('fail.remove')
     throw throwError(new Error)
 
     
