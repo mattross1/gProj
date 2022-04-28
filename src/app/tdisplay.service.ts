@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
-import { ConstantPool } from '@angular/compiler';
-import { HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
-import { Unauthorized } from 'http-errors'
 import { MessageService } from './message.service';
 
 
@@ -74,7 +71,7 @@ export class TdisplayService {
 
     this.msgService.errorFun("Edit Error", "Error");
     console.log('fail.edit')
-    throw throwError(Unauthorized)
+    throw throwError(Error("Error"))
 
     
     

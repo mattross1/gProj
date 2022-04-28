@@ -34,6 +34,7 @@ import { SupportComponent } from './support/support.component';
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     MatInputModule,
     HttpClientModule,
@@ -41,8 +42,7 @@ import { SupportComponent } from './support/support.component';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       timeOut: 3000
-    }),
-    MatButtonModule
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
