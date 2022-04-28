@@ -35,7 +35,10 @@ import { ToastrModule } from 'ngx-toastr';
     MatInputModule,
     HttpClientModule,
     MatTableModule,
-    ToastrModule
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      timeOut: 3000
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ConstantPool } from '@angular/compiler';
+import { HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
+import { Unauthorized } from 'http-errors'
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -49,12 +54,12 @@ export class TdisplayService {
       }),
       responseType: 'text'
     }
-    this.http.get(this.datau, getPara).subscribe(subdat => {});
+    return this.http.get<any>(this.datau, getPara)
   }
 
   updateFun(phoneUpIn: string | undefined, punchUpIn: string | undefined) {
-    let updateString: string = 'update iceTable set punches = ' + 
-    punchUpIn + ' where phone = \'' + phoneUpIn + '\';';
+    let updateString: string = 'update iceTable set punches = \'' + 
+    punchUpIn + '\' where phone = \'' + phoneUpIn + '\';';
     let getPara:Object = {
       headers: new HttpHeaders({
         paras: updateString
@@ -63,8 +68,12 @@ export class TdisplayService {
     }
     if (this.clientIp != '98.171.200.74')
     {
-      this.http.get(this.datau, getPara).subscribe(subdat => {});
+      return this.http.get<any>(this.datau, getPara)
     }
+
+    throw throwError(Unauthorized)
+
+    
     
   }
   removeFun(phoneRemIn: string | undefined) {
@@ -77,8 +86,12 @@ export class TdisplayService {
     }
     if (this.clientIp != '98.171.200.74')
     {
-      this.http.get(this.datau, getPara).subscribe(subdat => {});
+      return this.http.get<any>(this.datau, getPara)
     }
+
+    throw throwError(Unauthorized)
+
+    
   }
 
 }
